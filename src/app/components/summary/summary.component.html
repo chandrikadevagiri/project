@@ -1,0 +1,12 @@
+<div class="text-center">Summary</div>
+<div class="=row">
+    <div class="col-md-12 row" *ngFor="let item of productDetails">
+        <div class="col-md-4"><img class="card-img-top" [src]="item.productImagePath" alt=""></div>
+        <div class="col-md-4">1 </div>
+        <div class="col-md-4">{{item.productPrice}}</div> 
+    </div>
+    <div class="col-md-12 row">
+        <div class="col-md-6">Total Amount</div> 
+        <div class="col-md-6">{{totalProductAmt}}</div> 
+    </div>
+</div>
