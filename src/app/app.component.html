@@ -76,8 +76,13 @@
     </ul>
     <button class="navbar-toggler d-block d-lg-none" type="button" data-toggle="collapse" data-target="#components-nav"><span class="navbar-toggler-icon"></span></button><a class="btn btn-primary btn-shadow ml-2 ml-lg-4" href="#">Buy now</a>
   </header>
-   <div class="main col-md-12">
-      <router-outlet></router-outlet>
+   <div class="main col-md-12 row">
+      <div [ngClass]="{'col-md-8': showSummary, 'col-md-12': !showSummary}" >
+        <router-outlet></router-outlet>
+      </div>
+      <div [hidden]="!showSummary" class="col-md-4">
+        <app-summary></app-summary>
+      </div>
    </div>  
     
       <footer class="col-md-12" >

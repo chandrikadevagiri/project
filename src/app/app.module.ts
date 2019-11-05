@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule } from '@angular/material';
 import { AddcartComponent } from './components/addcart/addcart.component';
 import { CategoryPipe } from './pipes/category.pipe';
+import { SummaryComponent } from './components/summary/summary.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { CategoryPipe } from './pipes/category.pipe';
     EditComponent,
     MenuComponent,
     AddcartComponent,
-    CategoryPipe
+    CategoryPipe,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

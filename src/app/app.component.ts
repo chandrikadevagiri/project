@@ -13,22 +13,26 @@ import { SearchPipe} from '../app/search.pipe';
 export class AppComponent implements OnInit {
   searchText: string;
 username: string;
- handleLink:boolean=false;
-  constructor(private authService: AuthService,private  sharedEvent: SharedeventService) {
+ handleLink = false;
+ showSummary = false;
+  constructor(private authService: AuthService, private  sharedEvent: SharedeventService) {
     this.sharedEvent.userData.subscribe(
       (data) => {
         this.handleLink = data;
       }
     );
+    this.sharedEvent.productItemCountEvent.subscribe((count) => {
+      this.showSummary = (Number(count) !== 0) ? true : false;
+    });
   }
-                    
+
   isLoggedIn$: Observable<boolean>;
 
     ngOnInit() {
       this.isLoggedIn$ = this.authService.isLoggedIn;
     }
 
-    logout(){
+    logout() {
       this.authService.logout();
     }
 

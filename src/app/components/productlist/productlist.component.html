@@ -11,10 +11,17 @@
                     <h3 class="card-title"></h3> 
                     <p class="card-text"> <a [routerLink]="'/productdetails/'+p.productID">{{p.productName}}</a></p> 
               </div> 
-             <a  class="a1" [routerLink]="'/editproduct/'+p.productID">edit</a>
-             
+             <a  class="a1" [routerLink]="'/editproduct/'+p.productID">edit</a>             
             </div> 
-
+            <div class="card col-md-4">
+                <a [routerLink]="['/productdetails/test']"><img class="card-img-top" [src]= 
+                "'/assets/products/product_4.jpg'"></a>
+                <div class="card-body"> 
+                    <h3 class="card-title"></h3> 
+                    <p class="card-text"> <a [routerLink]="'/productdetails/test'">Testing can activate</a></p> 
+                </div> 
+                <a class="a1" [routerLink]="'/editproduct/test'">edit</a>
+            </div> 
         </div> 
     </div> 
             
