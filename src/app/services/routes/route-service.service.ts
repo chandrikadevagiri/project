@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginComponent } from 'src/app/components/login/login.component';
-import { ProductDetailsComponent } from 'src/app/components/product-details/product-details.component';
+import { ProductDetailsComponent } from 'product-details/product-details.component';
 import { HttpServiceService } from '../http-service/http-service.service';
 import { ProductService } from '../products/products.service';
 

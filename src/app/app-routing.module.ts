@@ -6,7 +6,7 @@ import {LoginComponent} from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouteServiceService} from './services/routes/route-service.service';
 import { AuthGuard } from './services/authGuard';
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductDetailsComponent } from '../../product-details/product-details.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { ProductlistComponent } from './components/productlist/productlist.component';
 import { EditComponent } from './components/edit/edit.component';
