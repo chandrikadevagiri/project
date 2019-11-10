@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductDetailsModel } from '../src/app/model/product-details.model';
-import { ConstantData } from '../src/app/utils/constants';
+import { ProductDetailsModel } from 'src/app/model/product-details.model';
+import { ConstantData } from 'src/app/utils/constants';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpServiceService } from '../src/app/services/http-service/http-service.service';
+import { HttpServiceService } from 'src/app/services/http-service/http-service.service';
+import { SharedeventService } from 'src/app/services/shared/sharedevent.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class ProductDetailsComponent implements OnInit {
   productQuantity;
   noDetailsToDisplay;
   cart=0;
-constructor(private _router:Router,private activatedRoute: ActivatedRoute, private httpService: HttpServiceService) { }
+constructor(private sharedService:SharedeventService ,private _router:Router,private activatedRoute: ActivatedRoute, private httpService: HttpServiceService) { }
 
   ngOnInit() {   
     this.productID = this.activatedRoute.snapshot.params['productID'];
@@ -59,8 +60,10 @@ constructor(private _router:Router,private activatedRoute: ActivatedRoute, priva
  public  edit(productID){
     this._router.navigate(['/editproduct/'+productID]);
   }
-  public addcart(productID){
-    this._router.navigate(['/addcart/'+productID]);
+  public addcart(){
+    this.sharedService.productItemCountEvent.emit(this.cart);
+     this.sharedService.addCartEvent.emit(this.productDetails);
+     
    
   }
 }

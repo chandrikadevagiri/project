@@ -35,7 +35,7 @@ export class AddcartComponent implements OnInit {
   //      this.noDetailsToDisplay = 'Error in loading details' + err.error;
   //    }
   //  );
-  this.emitCartEvent()
+
   }
 
 

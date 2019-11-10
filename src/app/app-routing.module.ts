@@ -12,6 +12,7 @@ import { ProductlistComponent } from './components/productlist/productlist.compo
 import { EditComponent } from './components/edit/edit.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AddcartComponent } from './components/addcart/addcart.component';
+import { RouterGuard } from './services/routerGuard';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -28,7 +29,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  providers:[ RouteServiceService,AuthGuard],
+  providers:[ RouteServiceService,AuthGuard,RouterGuard],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

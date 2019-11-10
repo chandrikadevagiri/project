@@ -10,6 +10,7 @@ export class ProductDetailsModel {
     productImagePath: string; // Mandatory
     productCategory: string;
     productQuantity:string;
+ 
 }
 
 

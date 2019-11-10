@@ -7,19 +7,26 @@ import { ProductDetailsModel } from '../../model/product-details.model';
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.scss']
 })
-export class SummaryComponent implements OnInit {
 
+export class SummaryComponent implements OnInit {
+  productDetails: ProductDetailsModel[] = [];
+  totalProductAmt = 0;
+ 
   constructor(private sharedeventService: SharedeventService) {
     this.sharedeventService.addCartEvent.subscribe((productData) => {
       this.productDetails.push(productData);
-      this.totalProductAmt += Number(productData.productPrice);
+      //this.totalProductAmt += Number(productData.productPrice);
+
+      //this.totalProductAmt+=productData.productPrice*productData.productQuantity;
+    
+      
     });
    }
 
-  productDetails: ProductDetailsModel[] = [];
-  totalProductAmt = 0;
+  
   ngOnInit() {
-
+   
+   
   }
 
 }

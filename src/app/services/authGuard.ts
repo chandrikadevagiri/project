@@ -23,6 +23,7 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ) {
+   
     let temp = this.userService.getUserList();
     if (temp.username && temp.password) {
       return true;

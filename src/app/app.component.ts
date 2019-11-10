@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
 username: string;
  handleLink = false;
  showSummary = false;
+ count1:number;
   constructor(private authService: AuthService, private  sharedEvent: SharedeventService) {
     this.sharedEvent.userData.subscribe(
       (data) => {
@@ -24,6 +25,7 @@ username: string;
     this.sharedEvent.productItemCountEvent.subscribe((count) => {
       this.showSummary = (Number(count) !== 0) ? true : false;
     });
+   
   }
 
   isLoggedIn$: Observable<boolean>;
